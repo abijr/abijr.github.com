@@ -1,7 +1,94 @@
 hr
 {
   border-color: #CCCCCC;
-  border-width: 1px 0 0 0;
+  border-width: 4px 0 0 0;
   border-style: solid;
+}
+h3
+{
+}
+
+/* Submenu */
+#sidebar
+{
+  width: 109px;
+  padding-right: 20px;
+  margin-bottom: 20px;
+  float: left;
+  clear: left;
+  
+  border-color: #CCCCCC;
+  border-style: solid;
+  border-width: 0px;
+  border-right-width: 1px;
+}
+ 
+#sidebar a {
+  color: rgb(0,102,204);
+  background-color: transparent;
+  margin: 0;
+  padding: 0.25em 1ex 0.25em 2mm;
+  display: block;
+  text-transform: capitalize;
+  font-weight: bold!important;
+  font-size: 102%;
+  border-left: white solid 0.2em;
+}
+
+#sidebar a:hover {
+  color: white;
+  background-color: rgb(100,135,220);
+  border-left: black solid 0.2em;
+  text-decoration: none;
+}
+
+#sidebar ul
+{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style-image: none;
+}
+
+#sidebar ul li
+{
+  padding: 5px;
+  border-color: #B1BA29;
+  border-style: solid;
+  border-width: 0px;
+  border-bottom-width: 2px;
+}
+
+/* Wrapper */
+#wrapper
+{
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+ 
+/* Content */
+#content
+{
+  width: 580px;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  float: left;
+}
+
+#content h1, h1 a, h2
+{
+  color: #252525;
+  margin-bottom: 5px;
+  padding-bottom: 2px;
+
+  font-family: Georgia;
+  font-size: 20px;
+  font-weight: normal;
+
+  border-color: #B1BA29;
+  border-style: solid;
+  border-width: 0px;
+  border-bottom-width: 2px;
 }
 
