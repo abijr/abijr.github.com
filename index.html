@@ -4,6 +4,24 @@
 			<link rel="stylesheet" href="css/style.css" type="text/css" media="screen, handheld" title="default" />
 			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 
+		<script type="text/javascript">
+ 
+			function toggle_content(name){
+					var myobjects=['link1','link2'];
+					var x;
+					for  (x in myobjects){
+							
+							var mystuff=document.getElementById(myobjects[x]);
+							mystuff.setAttribute("class", "hide"); 
+						}
+ 
+					var myobj=document.getElementById(name);
+					myobj.setAttribute("class", "show"); 	
+							 
+				}
+
+		</script>
+
 	</head>
 
 	 <!--This is a comment. Comments are not displayed in the browser-->
@@ -19,19 +37,26 @@
 			 
 			<div id="sidebar">
 				<ul>
-					<li><a href="hello.html">hello</a></li>
-					<li><a href="item.html">item</a></li>
+					<li><a href="hello.html" onmouseover="toggle_content('link1')">hello</a></li>
+					<li><a href="about.html" onmouseover="toggle_content('link2')">about</a></li>
+					<li><a href="random.html">random</a></li>
 				</ul>
 				 
 			</div>
 			 
 			<div id="content"> 
-				 
-				<p>Just a draft...</p>
-				<p>Working as fast as I can</p>
-				<p><a href="http://www.w3schools.com">This is a link to w3schools, [from where I'm learning html]</a>
-				<p><a href="http://abijr.blogspot.com">And this is a link to my * blog * </a>
+				<span id="link1" class="hide"> 
+					<p>Just a draft...</p>
+					<p>Working as fast as I can</p>
+					<p><a href="http://www.w3schools.com">This is a link to w3schools, [from where I'm learning html]</a>
+					<p><a href="http://abijr.blogspot.com">And this is a link to my * blog * </a>
+				</span>
 			 
+				 <span id="link2" class="hide"> 
+					<p>Hello</p>
+				</span>
+
+ 
 			</div>
 			 
 		</div>

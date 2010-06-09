@@ -10,6 +10,14 @@ hr
 	padding: 0;
 }
 
+
+.hide {
+	display:none;
+}
+.show {
+	display:block;
+}
+
 h3
 {
 	font-family: monospace;
@@ -42,7 +50,7 @@ p
 	margin: 0 !important;
 	padding: 0 !important;
 	background-color: #BBCCDD;
-	border-bottom-color: #B1BA29;
+	border-bottom-color: #000000;
 	border-bottom-style: solid !important;
 	border-bottom-width: 5px !important;
 }
