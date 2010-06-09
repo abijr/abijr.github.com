@@ -4,6 +4,12 @@ hr
   border-width: 4px 0 0 0;
   border-style: solid;
 }
+ 
+*{
+	margin: 0;
+	padding: 0;
+}
+
 h3
 {
 	font-family: monospace;
@@ -15,9 +21,32 @@ h3
 
 p
 {
-	margin-top: 0px;
+	margin-top: 0;
 }
 
+/* body */
+#body
+{
+	-moz-background-clip: border;
+	-moz-background-origin: padding;
+	-moz-background-size: auto auto;
+	background-position: 0 0;
+	border-top-style: solid;
+	margin: 0;
+	padding: 0;
+	 
+} 
+/* Navbar */
+#navbar
+{
+	margin: 0 !important;
+	padding: 0 !important;
+	background-color: #BBCCDD;
+	border-bottom-color: #B1BA29;
+	border-bottom-style: solid !important;
+	border-bottom-width: 5px !important;
+}
+ 
 /* Submenu */
 #sidebar
 {
