@@ -2,12 +2,13 @@
 	<head>
 			<title>~abijr</title>
 			<link rel="stylesheet" href="css/style.css" type="text/css" media="screen, handheld" title="default" />
-			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+			<link rel="shortcut icon" type="image/x-icon" href="media/favicon.ico" />
 
 		<script type="text/javascript">
  
 			function toggle_content(name){
-					var myobjects=['link1','link2'];
+					var myobjects=['link1','link2','link3'];
 					var x;
 					for  (x in myobjects){
 							
@@ -21,7 +22,6 @@
 				}
 
 		</script>
-
 	</head>
 
 	 <!--This is a comment. Comments are not displayed in the browser-->
@@ -30,31 +30,43 @@
 	<body> 
  
 		<div id="navbar"> 
-			<img src="images/logo_2.png" /> 	
+			<img src="media/logo_2.png" /> 	
 		</div>
  
 		<div id="wrapper">
 			 
 			<div id="sidebar">
 				<ul>
-					<li><a href="hello.html" onmouseover="toggle_content('link1')">hello</a></li>
-					<li><a href="about.html" onmouseover="toggle_content('link2')">about</a></li>
-					<li><a href="random.html">random</a></li>
+					<li><a onmouseover="toggle_content('link1')">hello</a></li>
+					<li><a onmouseover="toggle_content('link2')">about</a></li>
+					<li><a onmouseover="toggle_content('link3')">random</a></li>
 				</ul>
 				 
 			</div>
 			 
 			<div id="content"> 
-				<span id="link1" class="hide"> 
-					<p>Just a draft...</p>
+				<span id="link1" class="show"> 
+					<h3>Hello</h3> 
+					<p></p>
+					<p>Just a draft...progressing!!!</p>
 					<p>Working as fast as I can</p>
-					<p><a href="http://www.w3schools.com">This is a link to w3schools, [from where I'm learning html]</a>
-					<p><a href="http://abijr.blogspot.com">And this is a link to my * blog * </a>
+					<p><a href="http://abijr.blogspot.com">this is a link to my * blog * </a>
 				</span>
 			 
 				 <span id="link2" class="hide"> 
-					<p>Hello</p>
+					<h3>About me (I guess)</h3> 
+					<p></p>
+					<p>Well, this is supposed to say something about me....</p>
+					<p>So, this is a start: I am a linux user!</p>
 				</span>
+ 
+				<span id="link3" class="hide"> 
+					<h3>random stuff</h3> 
+					<p></p>
+					<p>I've got no random stuff, as of now.</p>
+
+				</span>
+
 
  
 			</div>
