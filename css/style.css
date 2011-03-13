@@ -29,16 +29,13 @@ h3
 
 p
 {
-	margin-top: 5;
-	margin-bottom: 5;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 /* body */
 #body
 {
-	-moz-background-clip: border;
-	-moz-background-origin: padding;
-	-moz-background-size: auto auto;
 	background-position: 0 0;
 	border-top-style: solid;
 	margin: 0;
