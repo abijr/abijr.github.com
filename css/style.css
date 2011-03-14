@@ -8,6 +8,7 @@ hr
 *{
 	margin: 0;
 	padding: 0;
+	font-family: helvetica;
 }
 
 
@@ -20,7 +21,7 @@ hr
 
 h3
 {
-	font-family: monospace;
+	font-family: helvetica;
 	font-size: 150%;
 	padding-left: 25px;
 	margin-top: 20px;
@@ -40,17 +41,18 @@ p
 	border-top-style: solid;
 	margin: 0;
 	padding: 0;
-	 
+	overflow: auto;	 
 } 
 /* Navbar */
 #navbar
 {
 	margin: 0 !important;
 	padding: 0 !important;
-	background-color: #BBCCDD;
+	 
+    background-color: rgb(100,135,220);
 	border-bottom-color: #000000;
 	border-bottom-style: solid !important;
-	border-bottom-width: 5px !important;
+	border-bottom-width: 3px !important;
 }
  
 /* Submenu */
@@ -61,7 +63,9 @@ p
   margin-bottom: 20px;
   float: left;
   clear: left;
+  height: 700px;
   
+  background-color: #4343AA;
   border-color: #000;
   border-style: solid;
   border-width: 0px;
@@ -69,7 +73,7 @@ p
 }
  
 #sidebar a {
-  color: rgb(0,102,204);
+  color: #FFFFFF;
   background-color: transparent;
   margin: 0;
   padding: 0.25em 1ex 0.25em 2mm;
@@ -115,7 +119,9 @@ p
 /* Content */
 #content
 {
+  background-color: rgb(100,135,220);
   width: 580px;
+  height: 700px;
   padding-left: 20px;
   margin-bottom: 20px;
   float: left;
@@ -127,7 +133,7 @@ p
   margin-bottom: 5px;
   padding-bottom: 2px;
 
-  font-family: Georgia;
+  font-family: helvetica;
   font-size: 20px;
   font-weight: normal;
 
