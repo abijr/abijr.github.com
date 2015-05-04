@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "A Continuous Deployment Workflow Draft"
-date:   2015-05-03 17:31
+title: A Continuous Deployment Workflow Draft
+date: '2015-05-03 19:34'
 categories: devOps
 ---
 
