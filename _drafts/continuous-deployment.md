@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "A Continuous Deployment Workflow"
+title:  "A Continuous Deployment Workflow Draft"
 date:   2015-05-03 17:31
 categories: devOps
 ---
