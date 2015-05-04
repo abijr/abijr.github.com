@@ -5,7 +5,7 @@ date: '2015-05-03 19:34'
 categories: devOps
 ---
 
-This is a workflow draft for the development and deployment of the myriad of services and applications used at Foxconn - Santa Teresa (my current workplace).
+This is a workflow draft for the development and deployment of the myriad of services and applications used at my current workplace.
 
 The Problem(s)
 --------------
