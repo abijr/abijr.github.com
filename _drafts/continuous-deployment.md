@@ -11,15 +11,15 @@ The Problem(s)
 --------------
 1. Most applications and web services are hand installed or developed directly in production servers. There is no easy way to deploy to production servers.
 
-2. When applications/services crash, they crash... hard. No graceful failures, reason being that, there is only one instance of each application.
+2. When applications/services crash, they crash... hard. No graceful failures, reason being that, there is only one instance of each application/service.
 
 3. There is no testing environment. You publish your application/service, and cross your fingers hoping for the best.
 
 Solution at a glance
 --------------------
-1. Use a configuration management (CM) tool to solve problem #1. With the CM tool configuration files, install and launch apps/services along with their dependencies. Simplifying and documenting the deployment process.
+1. Use a configuration management (CM) tool to solve problem #1. With the CM tool, install and launch apps/services along with their dependencies. Simplifying and documenting the deployment process, this because the CM tool only needs a configuration file to install and configure a system.
 
-2. Use a service discovery system to allow more than one instance to be available at a time, allowing graceful failures and possibly load balancing and solving problem #2.
+2. Use a service discovery system to allow more than one instance to be available at a time, allowing graceful failures and possibly load balancing, solving problem #2.
 
 3. Finally, for problem #3, use a combination of solutions #1 and #2 to recreate the production environment (at a smaller scale) to allow the testing of applications and services.
 
