@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Continuous Deployment on Abimael Martínez</title>
+    <link>https://abijr.com/tags/continuous-deployment/</link>
+    <description>Recent content in Continuous Deployment on Abimael Martínez</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 03 May 2015 19:34:35 -0500</lastBuildDate>
+    
+	<atom:link href="https://abijr.com/tags/continuous-deployment/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Continuous Deployment Workflow Draft</title>
+      <link>https://abijr.com/blog/a-continuous-deployment-workflow-draft/</link>
+      <pubDate>Sun, 03 May 2015 19:34:35 -0500</pubDate>
+      
+      <guid>https://abijr.com/blog/a-continuous-deployment-workflow-draft/</guid>
+      <description>This is a workflow draft for the development and deployment of the myriad of services and applications used at my current workplace.
+The Problem(s) An overview of the current situation.
+ Most applications and web services are hand installed or developed directly in production servers. There is no easy way to deploy to production servers.
+ When applications/services crash, they crash&amp;hellip; hard. No graceful failures, reason being that, there is only one instance of each application/service.</description>
+    </item>
+    
+  </channel>
+</rss>

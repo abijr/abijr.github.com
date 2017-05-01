@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://abijr.com/blog/a-continuous-deployment-workflow-draft/</loc>
+    <lastmod>2015-05-03T19:34:35-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://abijr.com/</loc>
+    <lastmod>2015-05-03T19:34:35-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://abijr.com/blog/</loc>
+    <lastmod>2015-05-03T19:34:35-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://abijr.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://abijr.com/tags/continuous-deployment/</loc>
+    <lastmod>2015-05-03T19:34:35-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://abijr.com/categories/devops/</loc>
+    <lastmod>2015-05-03T19:34:35-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://abijr.com/tags/</loc>
+    <lastmod>2015-05-03T19:34:35-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
