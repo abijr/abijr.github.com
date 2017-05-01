@@ -16,7 +16,7 @@ The Problem(s) An overview of the current situation.
  Most applications and web services are hand installed or developed directly in production servers. There is no easy way to deploy to production servers.
  When applications/services crash, they crash&hellip; hard. No graceful failures, reason being that, there is only one instance of each application/service." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://abijr.com/blog/a-continuous-deployment-workflow-draft/" />
+<meta property="og:url" content="http://abijr.com/blog/a-continuous-deployment-workflow-draft/" />
 
 
 
@@ -40,7 +40,7 @@ The Problem(s) An overview of the current situation.
      A Continuous Deployment Workflow Draft 
 
 </title>
-<link rel="canonical" href="https://abijr.com/blog/a-continuous-deployment-workflow-draft/">
+<link rel="canonical" href="http://abijr.com/blog/a-continuous-deployment-workflow-draft/">
 
 
 
@@ -58,9 +58,9 @@ The Problem(s) An overview of the current situation.
 
 
     
-    <link rel="stylesheet" href="https://abijr.com/css/reset.css?t=2017-05-01%2013%3a35%3a45.794102901%20-0500%20CDT">
-    <link rel="stylesheet" href="https://abijr.com/css/pygments.css?t=2017-05-01%2013%3a35%3a45.794102901%20-0500%20CDT">
-    <link rel="stylesheet" href="https://abijr.com/css/main.css?t=2017-05-01%2013%3a35%3a45.794102901%20-0500%20CDT">
+    <link rel="stylesheet" href="http://abijr.com/css/reset.css?t=2017-05-01%2013%3a38%3a44.320932233%20-0500%20CDT">
+    <link rel="stylesheet" href="http://abijr.com/css/pygments.css?t=2017-05-01%2013%3a38%3a44.320932233%20-0500%20CDT">
+    <link rel="stylesheet" href="http://abijr.com/css/main.css?t=2017-05-01%2013%3a38%3a44.320932233%20-0500%20CDT">
     
 
 
@@ -68,7 +68,7 @@ The Problem(s) An overview of the current situation.
 
 <link rel="shortcut icon"
 
-    href="https://abijr.com/img/favicon.ico"
+    href="http://abijr.com/img/favicon.ico"
 
 >
 
@@ -94,18 +94,18 @@ The Problem(s) An overview of the current situation.
                     
                 
                 
-                <a href="https://abijr.com/"><img class="avatar" src="https://abijr.com/img/avatar.png" srcset="https://abijr.com/img/avatar.png 1x"></a>
+                <a href="http://abijr.com/"><img class="avatar" src="http://abijr.com/img/avatar.png" srcset="http://abijr.com/img/avatar.png 1x"></a>
             
-            <a href="https://abijr.com/"><div class="name">Abimael Martínez</div></a>
+            <a href="http://abijr.com/"><div class="name">Abimael Martínez</div></a>
             
             <nav>
                 <ul>
                     
-                        <li class="nav-blog"><a href="https://abijr.com/blog/"><span>Blog</span></a></li>
+                        <li class="nav-blog"><a href="http://abijr.com/blog/"><span>Blog</span></a></li>
                     
-                        <li class="nav-about"><a href="https://abijr.com/about/"><span>About</span></a></li>
+                        <li class="nav-about"><a href="http://abijr.com/about/"><span>About</span></a></li>
                     
-                        <li class="nav-code"><a href="https://abijr.com/code/"><span>Code</span></a></li>
+                        <li class="nav-code"><a href="http://abijr.com/code/"><span>Code</span></a></li>
                     
                 </ul>
             </nav>
@@ -118,7 +118,7 @@ The Problem(s) An overview of the current situation.
         <div class="content">
 
         
-            <a href="//github.com/abijr" target="_blank" rel="noopener"><img class="icon" src="https://abijr.com/img/github.svg" alt="github" /></a>
+            <a href="//github.com/abijr" target="_blank" rel="noopener"><img class="icon" src="http://abijr.com/img/github.svg" alt="github" /></a>
         
 
         
@@ -126,7 +126,7 @@ The Problem(s) An overview of the current situation.
         
 
         
-            <a href="//linkedin.com/in/abimael" target="_blank" rel="noopener"><img class="icon" src="https://abijr.com/img/linkedin.svg" alt="linkedin" /></a>
+            <a href="//linkedin.com/in/abimael" target="_blank" rel="noopener"><img class="icon" src="http://abijr.com/img/linkedin.svg" alt="linkedin" /></a>
         
 
         
@@ -134,11 +134,11 @@ The Problem(s) An overview of the current situation.
         
 
         
-            <a href="mailto:abijr.mtz@gmail.com"><img class="icon" src="https://abijr.com/img/email.svg" alt="email" /></a>
+            <a href="mailto:abijr.mtz@gmail.com"><img class="icon" src="http://abijr.com/img/email.svg" alt="email" /></a>
         
 
         
-            <a href="https://abijr.com/index.xml"><img class="icon" src="https://abijr.com/img/rss.svg" alt="rss" /></a>
+            <a href="http://abijr.com/index.xml"><img class="icon" src="http://abijr.com/img/rss.svg" alt="rss" /></a>
         
         
         </div>
@@ -157,7 +157,7 @@ The Problem(s) An overview of the current situation.
 
 </div>
 
-                    <div class="initials"><a href="https://abijr.com/"></a></div>
+                    <div class="initials"><a href="http://abijr.com/"></a></div>
                 </div>
                 <div class="meta">
                     
@@ -252,16 +252,16 @@ After running tests (automated or not), the developer can choose to publish the 
 </div>
 
                 <br>
-		<p><a href="https://abijr.com/blog/">Back to posts</a></p>
+		<p><a href="http://abijr.com/blog/">Back to posts</a></p>
             </div>
             <br>
             <div class="disqus">
                 <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'abijr';
-    var disqus_identifier = 'https:\/\/abijr.com\/blog\/a-continuous-deployment-workflow-draft\/';
+    var disqus_identifier = 'http:\/\/abijr.com\/blog\/a-continuous-deployment-workflow-draft\/';
     var disqus_title = 'A Continuous Deployment Workflow Draft';
-    var disqus_url = 'https:\/\/abijr.com\/blog\/a-continuous-deployment-workflow-draft\/';
+    var disqus_url = 'http:\/\/abijr.com\/blog\/a-continuous-deployment-workflow-draft\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Abimael Martínez</title>
-    <link>https://abijr.com/categories/</link>
+    <link>http://abijr.com/categories/</link>
     <description>Recent content in Categories on Abimael Martínez</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     
-	<atom:link href="https://abijr.com/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://abijr.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Devops</title>
-      <link>https://abijr.com/categories/devops/</link>
+      <link>http://abijr.com/categories/devops/</link>
       <pubDate>Sun, 03 May 2015 19:34:35 -0500</pubDate>
       
-      <guid>https://abijr.com/categories/devops/</guid>
+      <guid>http://abijr.com/categories/devops/</guid>
       <description></description>
     </item>
     
