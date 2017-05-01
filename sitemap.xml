@@ -2,19 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://abijr.com/blog/golang-and-the-next-gen-build-tools/</loc>
+    <lastmod>2017-04-30T21:19:59-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://abijr.com/blog/a-continuous-deployment-workflow-draft/</loc>
     <lastmod>2015-05-03T19:34:35-05:00</lastmod>
   </url>
   
   <url>
     <loc>http://abijr.com/</loc>
-    <lastmod>2015-05-03T19:34:35-05:00</lastmod>
+    <lastmod>2017-04-30T21:19:59-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://abijr.com/blog/</loc>
-    <lastmod>2015-05-03T19:34:35-05:00</lastmod>
+    <lastmod>2017-04-30T21:19:59-05:00</lastmod>
     <priority>0</priority>
   </url>
   

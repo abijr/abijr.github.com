@@ -6,10 +6,19 @@
     <description>Recent content in Blog on Abimael Martínez</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 03 May 2015 19:34:35 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 30 Apr 2017 21:19:59 -0500</lastBuildDate>
     
 	<atom:link href="http://abijr.com/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Golang and the Next-Gen Build Tools</title>
+      <link>http://abijr.com/blog/golang-and-the-next-gen-build-tools/</link>
+      <pubDate>Sun, 30 Apr 2017 21:19:59 -0500</pubDate>
+      
+      <guid>http://abijr.com/blog/golang-and-the-next-gen-build-tools/</guid>
+      <description>The three general build systems from the big players. Bazel by Google, Pants by Twitter and Buck by Facebook, all attempt to allay the problems plaguing build system since time immemorial. They are all based on the internal build system from Google, Blaze, and as such, they are almost identical in features. They improve on the correctness, speed and modularity of the builds with features such as sandboxed builds, caching of targets, and namespacing of build modules.</description>
+    </item>
     
     <item>
       <title>A Continuous Deployment Workflow Draft</title>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Don&#39;t panic">
+
+<meta property="og:title" content="Golang and the Next-Gen Build Tools" />
+<meta property="og:description" content="The three general build systems from the big players. Bazel by Google, Pants by Twitter and Buck by Facebook, all attempt to allay the problems plaguing build system since time immemorial. They are all based on the internal build system from Google, Blaze, and as such, they are almost identical in features. They improve on the correctness, speed and modularity of the builds with features such as sandboxed builds, caching of targets, and namespacing of build modules." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://abijr.com/blog/golang-and-the-next-gen-build-tools/" />
+
+
+
+<meta property="article:published_time" content="2017-04-30T21:19:59-05:00"/>
+<meta property="article:modified_time" content="2017-04-30T21:19:59-05:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<title>
+
+
+     Golang and the Next-Gen Build Tools 
+
+</title>
+<link rel="canonical" href="http://abijr.com/blog/golang-and-the-next-gen-build-tools/">
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="http://abijr.com/css/reset.css?t=2017-05-01%2016%3a42%3a57.938201975%20-0500%20CDT">
+    <link rel="stylesheet" href="http://abijr.com/css/pygments.css?t=2017-05-01%2016%3a42%3a57.938201975%20-0500%20CDT">
+    <link rel="stylesheet" href="http://abijr.com/css/main.css?t=2017-05-01%2016%3a42%3a57.938201975%20-0500%20CDT">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="http://abijr.com/img/favicon.ico"
+
+>
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                
+                <a href="http://abijr.com/"><img class="avatar" src="http://abijr.com/img/avatar.png" srcset="http://abijr.com/img/avatar.png 1x"></a>
+            
+            <a href="http://abijr.com/"><div class="name">Abimael Martínez</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-blog"><a href="http://abijr.com/blog/"><span>Blog</span></a></li>
+                    
+                        <li class="nav-about"><a href="http://abijr.com/about/"><span>About</span></a></li>
+                    
+                        <li class="nav-code"><a href="http://abijr.com/code/"><span>Code</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+
+        
+            <a href="//github.com/abijr" target="_blank" rel="noopener"><img class="icon" src="http://abijr.com/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+
+        
+            <a href="//linkedin.com/in/abimael" target="_blank" rel="noopener"><img class="icon" src="http://abijr.com/img/linkedin.svg" alt="linkedin" /></a>
+        
+
+        
+
+        
+
+        
+            <a href="mailto:abijr.mtz@gmail.com"><img class="icon" src="http://abijr.com/img/email.svg" alt="email" /></a>
+        
+
+        
+            <a href="http://abijr.com/index.xml"><img class="icon" src="http://abijr.com/img/rss.svg" alt="rss" /></a>
+        
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Golang and the Next-Gen Build Tools
+
+</div>
+
+                    <div class="initials"><a href="http://abijr.com/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Sun Apr 30 2017 21:19:59 CDT'>Apr 30, 2017</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>4 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                
+
+<p>The three general build systems from the big players. Bazel by Google, Pants by Twitter and Buck by Facebook, all attempt to allay the problems plaguing build system since time immemorial. They are all based on the internal build system from Google, Blaze, and as such, they are almost identical in features. They improve on the correctness, speed and modularity of the builds with features such as sandboxed builds, caching of targets, and namespacing of build modules. </p>
+
+<p>They enforce the correctness of the task definitions and its dependencies, and thereby allow the optimization of incremental builds by caching intermediate results. They have client-server implementations to allow significant speedup of build operations. They are extensible and configurable. </p>
+
+<p>So, how do they compare? Which one is best? Well, for starters, here’s a table of features:</p>
+
+<table>
+<thead>
+<tr>
+<th>Build Tool</th>
+<th>Ease of Installation</th>
+<th>Windows Support</th>
+<th>Go Support</th>
+<th>Other</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Bazel</td>
+<td>Single script installer</td>
+<td>Beta</td>
+<td><ul style="list-style:none;padding-left:0"><li>Beta:</li><li>- Rudimentary dependency management<li>- Bootstraps <code>go</code> tool</li><li>- Cgo</li></ul></td>
+<td><ul style="padding-left:1rem"><li>iOS, Android</li><li>C++, Java, Python</li><li>Rust</li><li>Javascript using Closure (3rd party support for NodeJS)</li><li>Docker</li></td>
+</tr>
+
+<tr>
+<td>Pants</td>
+<td>Check-in-able runner script</td>
+<td>Nope</td>
+<td><ul style="list-style:none;padding-left:0"><li>Good:</li><li>- Good-ish dependency management</li><li>- go-fmt (beta)</li><li>- Bootstraps <code>go</code> tool</li></ul></td>
+<td><ul style="padding-left:1rem"><li>iOS, Android</li><li>C++, Java, Python</li><li>Javascript through NodeJS</li><li>Rust</li></ul></td>
+</tr>
+
+<tr>
+<td>Buck</td>
+<td><ul style="list-style:none;padding-left:0"><li>Mac</li><li>- Brew tap</li><li>Linux/Windows</li><li>- Build from source</li></ul></td>
+<td>Yes</td>
+<td><ul style="list-style:none;padding-left:0"><li>Basic:</li><li>- No bootstrapping of <code>go</code> binary.</li><li>- No dependency management.</li></ul></td>
+<td><ul style="padding-left:1rem"><li>iOS, Android</li><li>C++, Java, Python</li><li>Haskell</li><li>Rust</li></ul></td>
+</tr>
+</tbody>
+</table>
+
+<p>Pants is the first of the three to be released as open source, and it shows, it is the one with the shiniest features. It has good dependency management, integration with the tools you&rsquo;re probably using now and it is easy to setup whether it is on your workstation or remote build machines.</p>
+
+<p>Next up is Bazel. It feels like an industrial grade tool, with a nice web page, lots of stars on its github page and Windows support. But it is still lagging in features compared to pants. The lack of good dependency management means you will be writing dependency files by hand. No support for coverage means you&rsquo;ll have to run scripts on the side. The goals of the Bazel project are more geared towards big companies and not for small projects (which is to be expected of Google). Depending on what language your project is mainly written (say Python<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>) Bazel might not be ready for prime time, unless you&rsquo;re already vendoring (copying) 3rd party code into your repository or if you&rsquo;re willing to make the (non-trivial) change.</p>
+
+<p>As for Buck, well, it is a tool more geared towards front-end and mobile development. And it looks like a really good tool if you work on that segment. But you&rsquo;ll need to build it yourself if you want to use it on Linux, and that&rsquo;s a show stopper for me (at least give me bootsrap script!). Really nice output and good support for Windows might make this your first choice. Do note that Buck is the youngest of the tools, perhaps it will take over the build system world?</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>If limiting our scope to projects using Go, Pants takes the cake. It&rsquo;s <a href="https://pantsbuild.github.io/go_readme.html">documentation</a> for Go is top notch, and it walks you through the whole process. They&rsquo;re pretty responsive on their <a href="https://groups.google.com/forum/#!forum/pants-devel">community</a> channels, specially on <a href="https://pantsslack.herokuapp.com/">slack</a>. Trying up and coming features is as simple as changing the Pants version in the <code>pants.ini</code> file. And if you extend your considerations to other languages, you&rsquo;d be more than satisfied with Python+Pip+PEX support, NodeJS+NPM, along with the usual C++ and Java.</p>
+
+<p>Perhaps the best build tool will not remain the same one. Let&rsquo;s hope that the open source model shared by the tools will enhance their improvement through the competition and sharing of features. But, whether it is Pants, Buck or Bazel, these Next-Gen build tools feel like the future even if you&rsquo;re not following the monorepo structure in your organization. I keep wondering where the hype behind the next-gen build tools is, I would consider starting to use these tools, if only for the speedups in builds<sup class="footnote-ref" id="fnref:2"><a rel="footnote" href="#fn:2">2</a></sup>. Now, if you add build correctness and code organization improvements to the mix&hellip;</p>
+
+<p>What do you think?</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1"><a href="http://tanin.nanakorn.com/blogs/371">Bazel vs. Pants for a Python project</a>
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2"><a href="http://zserge.com/blog/buck-build-system.html">Buck - life is too short to spend a minute for each build</a>
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+                <br>
+		<p><a href="http://abijr.com/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'abijr';
+    var disqus_identifier = 'http:\/\/abijr.com\/blog\/golang-and-the-next-gen-build-tools\/';
+    var disqus_title = 'Golang and the Next-Gen Build Tools';
+    var disqus_url = 'http:\/\/abijr.com\/blog\/golang-and-the-next-gen-build-tools\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+</body>
+</html>
+
